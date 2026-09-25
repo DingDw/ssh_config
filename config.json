@@ -1,0 +1,551 @@
+{
+  "version": 1,
+  "connections": [
+    {
+      "name": "vps",
+      "host": "173.242.119.100",
+      "port": 26032,
+      "username": "root",
+      "password": "ding4da6wei7"
+    },
+    {
+      "name": "nas",
+      "host": "192.168.1.111",
+      "port": 22,
+      "username": "ddw",
+      "password": null
+    },
+    {
+      "name": "macbs@10.201.69.33",
+      "host": "10.201.69.33",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq69"
+    },
+    {
+      "name": "macbs@10.201.69.34",
+      "host": "10.201.69.34",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq69"
+    },
+    {
+      "name": "macbs@10.201.69.35",
+      "host": "10.201.69.35",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq69"
+    },
+    {
+      "name": "macbs@10.201.69.36",
+      "host": "10.201.69.36",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq69"
+    },
+    {
+      "name": "macbs@10.201.69.37",
+      "host": "10.201.69.37",
+      "port": 22,
+      "username": "macbs",
+      "password": "cwjtest@123"
+    },
+    {
+      "name": "macbs@10.201.69.38",
+      "host": "10.201.69.38",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq69"
+    },
+    {
+      "name": "macbs@10.201.69.45",
+      "host": "10.201.69.45",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq69"
+    },
+    {
+      "name": "macbs@10.201.69.46",
+      "host": "10.201.69.46",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq69"
+    },
+    {
+      "name": "macbs@10.201.69.47",
+      "host": "10.201.69.47",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq69"
+    },
+    {
+      "name": "macbs@10.201.69.48",
+      "host": "10.201.69.48",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq69"
+    },
+    {
+      "name": "macbs@10.203.60.3",
+      "host": "10.203.60.3",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZking996"
+    },
+    {
+      "name": "macbs@10.203.60.8",
+      "host": "10.203.60.8",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZking996"
+    },
+    {
+      "name": "macbs@10.203.60.9",
+      "host": "10.203.60.9",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZking996"
+    },
+    {
+      "name": "macbs@10.203.60.44",
+      "host": "10.203.60.44",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest996"
+    },
+    {
+      "name": "macbs@10.203.60.40",
+      "host": "10.203.60.40",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZking996"
+    },
+    {
+      "name": "macbs@10.201.65.68",
+      "host": "10.201.65.68",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "macbs@10.201.65.220",
+      "host": "10.201.65.220",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "macbs@10.201.65.222",
+      "host": "10.201.65.222",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "root@10.201.65.163",
+      "host": "10.201.65.163",
+      "port": 22,
+      "username": "root",
+      "password": "Sjssyq65@163admin"
+    },
+    {
+      "name": "root@10.201.69.39",
+      "host": "10.201.69.39",
+      "port": 22,
+      "username": "root",
+      "password": "Sjssyq69@39admin"
+    },
+    {
+      "name": "ddw@10.201.69.39",
+      "host": "10.201.69.39",
+      "port": 22,
+      "username": "ddw",
+      "password": "SZtest@30"
+    },
+    {
+      "name": "root@10.201.69.41",
+      "host": "10.201.69.41",
+      "port": 22,
+      "username": "root",
+      "password": "Sjssyq69@41admin"
+    },
+    {
+      "name": "root@10.201.69.42",
+      "host": "10.201.69.42",
+      "port": 22,
+      "username": "root",
+      "password": "Sjssyq69@42admin"
+    },
+    {
+      "name": "macbs@10.201.69.42#dongcai_maoyan",
+      "host": "10.201.69.42",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "root@10.201.69.43",
+      "host": "10.201.69.43",
+      "port": 22,
+      "username": "root",
+      "password": "Sjssyq69@43admin"
+    },
+    {
+      "name": "root@10.201.69.44",
+      "host": "10.201.69.44",
+      "port": 22,
+      "username": "root",
+      "password": "Sjssyq69@44admin"
+    },
+    {
+      "name": "guoxin$a8@10.201.70.59",
+      "host": "10.201.70.59",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest898"
+    },
+    {
+      "name": "guoxin$a8@10.203.60.61",
+      "host": "10.203.60.61",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "omm@10.203.60.62",
+      "host": "10.203.60.62",
+      "port": 22,
+      "username": "omm",
+      "password": "SZtest@898"
+    },
+    {
+      "name": "guoxin$a8@10.203.60.63",
+      "host": "10.203.60.63",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "root@10.201.69.69",
+      "host": "10.201.69.69",
+      "port": 22,
+      "username": "root",
+      "password": "Sjssyq69@69admin"
+    },
+    {
+      "name": "root@10.201.69.68",
+      "host": "10.201.69.68",
+      "port": 22,
+      "username": "root",
+      "password": "Sjssyq69@68admin"
+    },
+    {
+      "name": "chenyong@10.203.60.10",
+      "host": "10.203.60.10",
+      "port": 22,
+      "username": "chenyong",
+      "password": "SZking@998"
+    },
+    {
+      "name": "root@10.203.2.15",
+      "host": "10.203.2.15",
+      "port": 22,
+      "username": "root",
+      "password": "Zqcp.8888"
+    },
+    {
+      "name": "root@10.201.69.85",
+      "host": "10.201.69.85",
+      "port": 22,
+      "username": "root",
+      "password": "Sjssyq69@85admin"
+    },
+    {
+      "name": "macbs@10.203.60.37#x86",
+      "host": "10.203.60.37",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZking@898"
+    },
+    {
+      "name": "macbs@10.201.65.69",
+      "host": "10.201.65.69",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "macbs@10.201.65.199",
+      "host": "10.201.65.199",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "macbs@10.201.65.216",
+      "host": "10.201.65.216",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "macbs@10.201.65.217",
+      "host": "10.201.65.217",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "macbs@10.201.65.218",
+      "host": "10.201.65.218",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "macbs@10.201.65.219",
+      "host": "10.201.65.219",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "macbs@10.201.65.221",
+      "host": "10.201.65.221",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "macbs@10.201.65.223",
+      "host": "10.201.65.223",
+      "port": 22,
+      "username": "macbs",
+      "password": "Sjssyq65"
+    },
+    {
+      "name": "koca@10.201.64.205",
+      "host": "10.201.64.205",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.201.64.208",
+      "host": "10.201.64.208",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.201.65.249",
+      "host": "10.201.65.249",
+      "port": 22,
+      "username": "koca",
+      "password": "qaz123!@#"
+    },
+    {
+      "name": "macbs@10.201.70.55",
+      "host": "10.201.70.55",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "macbs@10.201.70.53",
+      "host": "10.201.70.53",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "macbs@10.201.65.59",
+      "host": "10.201.65.59",
+      "port": 22,
+      "username": "root",
+      "password": "Zqjycpzb65@59admin"
+    },
+    {
+      "name": "macbs@10.203.71.48",
+      "host": "10.203.71.48",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "macbs@10.203.71.46",
+      "host": "10.203.71.46",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "dcqstest@10.201.65.148",
+      "host": "10.201.65.148",
+      "port": 22,
+      "username": "dcqstest",
+      "password": "Sztest898!"
+    },
+    {
+      "name": "koca@10.203.60.84",
+      "host": "10.203.60.84",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.203.60.85",
+      "host": "10.203.60.85",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.203.60.86",
+      "host": "10.203.60.86",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.203.60.87",
+      "host": "10.203.60.87",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.203.60.88",
+      "host": "10.203.60.88",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.201.65.24",
+      "host": "10.201.65.24",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest@898"
+    },
+    {
+      "name": "koca@10.201.65.99",
+      "host": "10.201.65.99",
+      "port": 22,
+      "username": "koca",
+      "password": "SZking998"
+    },
+    {
+      "name": "a8@10.201.70.62",
+      "host": "10.201.70.62",
+      "port": 22,
+      "username": "a8",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.201.69.162",
+      "host": "10.201.69.162",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.201.69.163",
+      "host": "10.201.69.163",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.201.64.153",
+      "host": "10.201.64.153",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.201.64.154",
+      "host": "10.201.64.154",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.201.64.155",
+      "host": "10.201.64.155",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "koca@10.201.64.152",
+      "host": "10.201.64.152",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "root@10.201.65.123",
+      "host": "10.201.65.123",
+      "port": 22,
+      "username": "root",
+      "password": "Cfkjsyq65@123admin"
+    },
+    {
+      "name": "macbs@10.203.60.21",
+      "host": "10.203.60.21",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "macbs@10.203.60.22",
+      "host": "10.203.60.22",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "macbs@10.203.60.23",
+      "host": "10.203.60.23",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "macbs@10.203.60.24",
+      "host": "10.203.60.24",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "macbs@10.203.60.25",
+      "host": "10.203.60.25",
+      "port": 22,
+      "username": "macbs",
+      "password": "SZtest30"
+    },
+    {
+      "name": "koca@10.201.92.37",
+      "host": "10.201.92.37",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    },
+    {
+      "name": "wky@10.203.0.121",
+      "host": "10.203.0.121",
+      "port": 22,
+      "username": "wky",
+      "password": "wky"
+    },
+    {
+      "name": "macbs@10.201.65.26#huatai",
+      "host": "10.201.65.26",
+      "port": 22,
+      "username": "koca",
+      "password": "SZtest898"
+    }
+  ]
+}
