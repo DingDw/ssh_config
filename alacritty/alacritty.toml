@@ -1,0 +1,27 @@
+# Font configuration
+[font]
+normal = { family = "Maple Mono NF CN", style = "Regular" }
+size = 11
+
+# Colors
+[colors.primary]
+foreground = "#F8F8F2"
+background = "#282A36"
+
+# Window opacity
+[window]
+opacity = 0.9
+startup_mode = "Maximized"
+
+[terminal]
+# 直接启动 Zellij；窗格 shell 使用 Zellij 配置中的 default_shell "pwsh"。
+shell = 'C:\Users\ghoul\AppData\Local\Zellij\zellij.exe'
+
+[general]
+working_directory = "c:\\Users\\ghoul\\"
+
+[[keyboard.bindings]]
+# Windows E key physical scancode: avoids Ctrl+Alt logical-key translation.
+key = 18
+mods = "Control|Shift|Alt"
+command = { program = 'C:\Python312\pythonw.exe', args = ['C:\Users\ghoul\ssh_config\winscp_hotkey.py'] }
