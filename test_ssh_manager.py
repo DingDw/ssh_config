@@ -84,37 +84,39 @@ class ManagerTests(unittest.TestCase):
                 self.assertEqual(picker.run(), expected)
                 self.assertEqual(state.query, query)
 
-    def test_cleanup_key_keeps_picker_query_and_selection(self):
-        import asyncio
+    def test_startup_cleanup_runs_once_and_keeps_picker_available(self):
         import ssh_integration as bridge
-        from prompt_toolkit import Application
-        from prompt_toolkit.input.defaults import create_pipe_input
-        from prompt_toolkit.output import DummyOutput
-
         for failure in (False, True):
-            with create_pipe_input() as pipe:
-                def factory(**kwargs):
-                    return Application(**kwargs, input=pipe, output=DummyOutput())
-                state = app.SelectionState(query='macbs', index=1)
-                expected = app.filter_connections([self.dev, self.test], state.query)[state.index].name
-                with patch('prompt_toolkit.Application', side_effect=factory):
-                    picker = app.make_selector([self.dev, self.test], state, '')
-                async def keys():
-                    pipe.send_text('\x1b[19~')  # F8
-                    for _ in range(100):
-                        await asyncio.sleep(0.01)
-                        if cleanup.called:
-                            await asyncio.sleep(0.05)
-                            break
-                    pipe.send_text('\r')
-                with patch.object(bridge, 'cleanup_invalid_records',
-                                  return_value={'deleted': 2, 'kept': 1, 'skipped': 0},
-                                  side_effect=OSError('denied') if failure else None) as cleanup:
-                    result = picker.run(pre_run=lambda: picker.create_background_task(keys()))
-                    cleanup.assert_called_once()
-                self.assertEqual(result, expected)
-                self.assertEqual(state.query, 'macbs')
-                self.assertEqual(state.index, 1)
+            picker = Mock()
+            picker.run.side_effect = [self.dev.name, None]
+            with patch.object(bridge, 'picker_title', side_effect=contextlib.nullcontext), \
+                    patch.object(bridge, 'in_zellij', return_value=True), \
+                    patch.object(bridge, 'open_ssh_tab') as launch, \
+                    patch.object(app, 'load_connections', return_value=[self.dev]), \
+                    patch.object(app, 'make_selector', return_value=picker) as selector, \
+                    patch.object(bridge, 'cleanup_invalid_records',
+                                 return_value={'deleted': 2, 'kept': 1, 'skipped': 0},
+                                 side_effect=OSError('denied') if failure else None) as cleanup:
+                self.assertEqual(app.run_picker('ssh.exe'), 0)
+            cleanup.assert_called_once()
+            launch.assert_called_once_with(self.dev.name)
+            self.assertEqual(selector.call_count, 2)
+            initial_status = selector.call_args_list[0].args[2]
+            self.assertIn('自动清理失败' if failure else '自动清理 2，有效 1，跳过 0', initial_status)
+
+    def test_noninteractive_modes_do_not_cleanup(self):
+        import base64
+        import ssh_integration as bridge
+        token = base64.urlsafe_b64encode(self.dev.name.encode()).decode()
+        for args in (['--list'], ['--check'], ['--name', self.dev.name], ['--connect-in-pane', token]):
+            with patch.object(app, 'load_connections', return_value=[self.dev]), \
+                    patch.object(app.shutil, 'which', return_value='ssh.exe'), \
+                    patch.object(bridge, 'in_zellij', return_value=False), \
+                    patch.object(app, 'connect', return_value=0), \
+                    patch.object(bridge, 'cleanup_invalid_records') as cleanup, \
+                    contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(app.main(args), 0)
+            cleanup.assert_not_called()
 
     def test_windows_clipboard_unicode_ownership_and_failure_cleanup(self):
         user, kernel = Mock(), Mock()

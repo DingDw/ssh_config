@@ -220,7 +220,6 @@ def make_selector(connections: list[Connection], state: SelectionState, status: 
     search = TextArea(text=state.query, height=1, prompt=[("class:accent", " / ")],
                       multiline=False, wrap_lines=False, style="class:search")
     bindings = KeyBindings()
-    cleaning = False
 
     def terminal_size():
         return get_app().output.get_size()
@@ -359,27 +358,6 @@ def make_selector(connections: list[Connection], state: SelectionState, status: 
     def clear(event):
         search.text = ""
 
-    @bindings.add("f8")
-    async def cleanup(event):
-        """Keep the picker responsive and retain the user's search and selection."""
-        import asyncio
-        from ssh_integration import cleanup_invalid_records
-
-        nonlocal status, cleaning
-        if cleaning:
-            return
-        cleaning = True
-        status = "正在清理无效关联…"
-        event.app.invalidate()
-        try:
-            result = await asyncio.to_thread(cleanup_invalid_records)
-            status = f"已清理 {result['deleted']}，有效 {result['kept']}，跳过 {result['skipped']}"
-        except (OSError, ValueError, RuntimeError):
-            status = "清理失败，请检查配置文件和关联目录的访问权限。"
-        finally:
-            cleaning = False
-            event.app.invalidate()
-
     @bindings.add("enter")
     def select(event):
         if matches:
@@ -409,8 +387,6 @@ def make_selector(connections: list[Connection], state: SelectionState, status: 
         Window(FormattedTextControl(summary), height=1),
         body,
         Window(FormattedTextControl(message), height=Dimension(min=1, max=2), wrap_lines=True),
-        Window(FormattedTextControl([("", "  "), ("class:key", " F8 "),
-                                     ("class:muted", " 清理无效关联")]), height=1),
         Window(FormattedTextControl(footer), height=1),
         ConditionalContainer(Window(height=1), filter=Condition(lambda: terminal_size().rows >= 24)),
     ], width=lambda: Dimension.exact(content_width()))
@@ -435,10 +411,17 @@ def make_selector(connections: list[Connection], state: SelectionState, status: 
 
 def run_picker(executable: str) -> int:
     """Keep the manager alive while Zellij starts independent SSH tabs."""
-    from ssh_integration import in_zellij, open_ssh_tab, picker_title
+    from ssh_integration import cleanup_invalid_records, in_zellij, open_ssh_tab, picker_title
 
     with picker_title():
         state, status = SelectionState(), ""
+        # Clean once per interactive startup, never on each return to the selector
+        # or in SSH child workers. A maintenance failure must not block connections.
+        try:
+            result = cleanup_invalid_records()
+            status = f"自动清理 {result['deleted']}，有效 {result['kept']}，跳过 {result['skipped']}"
+        except (OSError, ValueError, RuntimeError):
+            status = "自动清理失败，请检查配置文件和关联目录的访问权限。"
         while True:
             connections = load_connections()
             name = make_selector(connections, state, status).run()
