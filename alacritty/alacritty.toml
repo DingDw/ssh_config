@@ -19,6 +19,7 @@ shell = 'C:\Users\ghoul\AppData\Local\Zellij\zellij.exe'
 
 [general]
 working_directory = "c:\\Users\\ghoul\\"
+import = ["alacritty-theme/themes/catppuccin_mocha.toml"]
 
 [[keyboard.bindings]]
 # Windows E key physical scancode: avoids Ctrl+Alt logical-key translation.
